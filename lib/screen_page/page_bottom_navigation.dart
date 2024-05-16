@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project_sliciui/screen_page/page_MyCourses.dart';
+import 'package:project_sliciui/screen_page/page_akses_kamera.dart';
 import 'package:project_sliciui/screen_page/page_home.dart';
-
+import 'package:project_sliciui/screen_page/page_maps.dart';
 
 class PageBottomNavigationBar extends StatefulWidget {
   const PageBottomNavigationBar({Key? key}) : super(key: key);
@@ -19,7 +20,7 @@ class _PageBottomNavigationBarState extends State<PageBottomNavigationBar>
   void initState() {
     super.initState();
 
-    tabController = TabController(length: 3, vsync: this);
+    tabController = TabController(length: 4, vsync: this);
     tabController.addListener(_handleTabSelection);
   }
 
@@ -45,9 +46,8 @@ class _PageBottomNavigationBarState extends State<PageBottomNavigationBar>
           children: [
             HomeScreen(),
             PageMyCourses(),
-            // Tambahkan widget untuk tab ketiga di sini
-            Placeholder(),
-            // Contoh penggunaan Placeholder sebagai widget untuk tab ketiga
+            AksesKamera(),
+            MapsFlutter(), // Tambahkan MapsFlutter ke dalam daftar anak TabBarView
           ],
         ),
       ),
@@ -68,14 +68,14 @@ class _PageBottomNavigationBarState extends State<PageBottomNavigationBar>
             activeIcon: Icon(Icons.library_books, color: Colors.blueAccent),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.article),
-            label: 'Blogs',
-            activeIcon: Icon(Icons.article, color: Colors.blueAccent),
+            icon: Icon(Icons.camera_alt), // Menggunakan ikon kamera
+            label: 'Kamera',
+            activeIcon: Icon(Icons.camera_alt, color: Colors.blueAccent),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'My Profile',
-            activeIcon: Icon(Icons.person, color: Colors.blueAccent),
+            icon: Icon(Icons.map), // Menggunakan ikon peta
+            label: 'Peta',
+            activeIcon: Icon(Icons.map, color: Colors.blueAccent),
           ),
         ],
         selectedItemColor: Colors.blueAccent,

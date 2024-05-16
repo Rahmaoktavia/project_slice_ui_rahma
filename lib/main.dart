@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_sliciui/screen_page/page_bottom_navigation.dart';
+import 'package:project_sliciui/screen_page/page_maps.dart';
 
 void main() {
   runApp(const MyApp());
