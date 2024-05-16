@@ -44,7 +44,7 @@ class _PageBottomNavigationBarState extends State<PageBottomNavigationBar>
         child: TabBarView(
           controller: tabController,
           children: [
-            HomeScreen(),
+            PageHome(),
             PageMyCourses(),
             AksesKamera(),
             MapsFlutter(), // Tambahkan MapsFlutter ke dalam daftar anak TabBarView

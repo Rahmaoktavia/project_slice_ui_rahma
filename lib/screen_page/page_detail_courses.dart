@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 void main() {
   runApp(MachineLearning());
 }
@@ -14,7 +15,10 @@ class MachineLearning extends StatelessWidget {
           leading: IconButton(
             icon: Icon(Icons.arrow_back),
             onPressed: () {
-              // Handle back button press
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => PageCourse()),
+              // );
             },
           ),
           actions: [
@@ -34,7 +38,7 @@ class MachineLearning extends StatelessWidget {
                 height: 200,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/gambar/cyber1.png'),
+                    image: AssetImage('gambar/cyber0.png'),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -52,7 +56,7 @@ class MachineLearning extends StatelessWidget {
                       ),
                       SizedBox(height: 8),
                       Text(
-                        '4.6 ★ 10.5k Learners',
+                        '4.5 ★ 10.5k Learners',
                         style: TextStyle(
                           color: Colors.white,
                         ),
@@ -99,27 +103,85 @@ class OverviewTab extends StatelessWidget {
               title: Text('6 Hours'),
             ),
             ListTile(
-              leading: Icon(Icons.badge), // Icon for certificate
+              leading: Icon(Icons.verified), // Icon for certificate
               title: Text('Completion Certificate'),
             ),
             ListTile(
-              leading: Icon(Icons.school), // Icon for level
+              leading: Icon(Icons.bar_chart), // Icon for level
               title: Text('Beginner'),
             ),
             SizedBox(height: 16),
-            Text('What will I learn?'),
-            Text(
-              'The Machine learning basics program is designed to offer a solid foundation & work-ready skills for ML engineers.',
+            Padding(
+              padding: const EdgeInsets.only(left: 15.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'What will I learn?',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    'The Machine learning basics program is designed to offer a solid foundation & work-ready skills for ML engineers. The Machine learning basics program is designed to offer a solid foundation & work-ready skills for ML engineers.',
+                    style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    'Rating and Reviews',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
             ),
             SizedBox(height: 16),
-            Text('Ratings and Reviews'),
-            Text('3.4 ★ 3 reviews'),
+            Padding(
+              padding: const EdgeInsets.only(left: 16.0),
+              child: Row(
+                children: [
+                  Text(
+                    '4.5',
+                    style: TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(width: 8),
+                  Row(
+                    children: [
+                      Icon(Icons.star, color: Colors.amber, size: 20),
+                      Icon(Icons.star, color: Colors.amber, size: 20),
+                      Icon(Icons.star, color: Colors.amber, size: 20),
+                      Icon(Icons.star, color: Colors.amber, size: 20),
+                      Icon(Icons.star_half, color: Colors.amber, size: 20),
+                    ],
+                  ),
+                  SizedBox(width: 8),
+                  Text(
+                    '15 reviews',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ],
+              ),
+            ),
             SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {
-                // Handle button press
-              },
-              child: Text('Start Learning'),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.deepPurple, // Background color
+                  foregroundColor: Colors.white, // Text color
+                ),
+                onPressed: () {
+                  // Handle button press
+                },
+                child: Text('Start Learning'),
+              ),
             ),
           ],
         ),
